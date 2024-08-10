@@ -46,7 +46,7 @@ function App() {
         </Form>
       )}
       {userType === 'adm' && (
-        <Form method='post' submitHandler={(e) => handleSubmitForm(e, { email: 'admin.com@gmail.com', senha: 'admin' })}>
+        <Form method='post' submitHandler={(e) => handleSubmitForm(e, credentialsAdm)}>
           <h2 className='font-bold text-2xl italic'>Faça login com suas credenciais de Adm</h2>
           <div className='flex flex-col p-5 items-start'>
             <label htmlFor='email' className='ml-2'>Email:</label>
