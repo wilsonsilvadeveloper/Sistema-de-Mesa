@@ -1,7 +1,7 @@
 import React from "react";
 
 interface FormProps {
-    method: string;
+    method?: string;
     submitHandler?: (event: React.FormEvent<HTMLFormElement>) => void | null;
     children: React.ReactNode;
 }
