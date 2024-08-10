@@ -5,6 +5,7 @@ import Form from './components/Form/Form';
 function App() {
   const [userType, setTypeUser] = useState<string | null>(''); 
   const [visibleForm, setVisibleForm] = useState<boolean>(true);
+  const [credentialsAdm, setCredentialsAdm] = useState<{email: string, senha: string}>({email: '', senha: ''});
 
   const handleShowForm = () => {
     setVisibleForm(!visibleForm);
@@ -49,9 +50,9 @@ function App() {
           <h2 className='font-bold text-2xl italic'>Faça login com suas credenciais de Adm</h2>
           <div className='flex flex-col p-5 items-start'>
             <label htmlFor='email' className='ml-2'>Email:</label>
-            <input type='email' id='email' name='email' placeholder='Digite seu email' className='w-full h-10 rounded-lg pl-2'/>
+            <input value={credentialsAdm.email} type='email' id='email' name='email' placeholder='Digite seu email' className='w-full h-10 rounded-lg pl-2' onChange={(e)=> setCredentialsAdm({...credentialsAdm, email: e.target.value})}/>
             <label htmlFor="senha" className='mt-2 ml-2'>Senha:</label>
-            <input type="password" name="senha" placeholder='Digite sua senha de adm' className='w-full h-10 rounded-lg pl-2'/>
+            <input value={credentialsAdm.senha} type="password" name="senha" placeholder='Digite sua senha de adm' className='w-full h-10 rounded-lg pl-2' onChange={(e)=> setCredentialsAdm({...credentialsAdm, senha: e.target.value})}/>
             <button type='submit' className='w-[60%] m-auto mt-4'>Logar</button>
           </div>
         </Form>
